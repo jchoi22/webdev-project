@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+/* Global styles */
+body {
+  background-color: rgb(191, 220, 245);
+  font-family: "Bebas Neue", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  color: #b42798; /* Set a custom color (blue) for links */
+  text-decoration: none; /* remove underline for links */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a:hover {
+  color: #18416e;
+  text-decoration: underline; /* underline hover */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Import new fonts */
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue:400,900");
+@import url("https://fonts.googleapis.com/css?family=Send+Flowers:400,900");
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,900");
+
+/* Styling for h1 */
+h1 {
+  font-family: "Send Flowers", sans-serif;
+  background-color: rgb(106, 144, 205);
+  border-radius: 5px; /* Round the corners */
+  font-weight: 400;
+  font-size: 50px;
+}
+
+/* Submit form styles */
+.submit-form {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.submit-form textarea {
+  width: 75%;
+  padding: 10px;
+  border: 5px solid rgb(106, 144, 205); /* blue border */
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 900;
+  color: #9596a0; /* text */
+}
+
+.submit-form input[name="button"] {
+  border: 2px solid rgb(106, 144, 205);
+  font-family: "Bebas Neue", sans-serif;
+  border-radius: 5px;
+  color: rgb(238, 139, 204);
+  background-color: #106e4d;
+}
+
+.submit-form input[name="button"]:hover {
+  background-color: #84bfab;
+}
+
+/* Header photos section */
+.header-photos {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background: #106e4d;
+}
+
+.header-photos ul {
+  display: flex; /* Align items in a row */
+  padding: 0; /* Reset padding */
+  margin: 0; /* Reset margin */
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.header-photos li {
+  list-style: none;
+  margin: 10px; /* Add spacing */
+}
+
+.header-photos img {
+  width: auto;
+  height: auto;
+  max-width: 135px; /* Set max width */
+  max-height: 225px; /* Set max height */
+}
+
+/* Navigation section */
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  background: rgb(238, 139, 204);
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navigation a:hover {
+  background: #106e4d;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Mobile responsiveness */
+@media all and (max-width: 350px) {
+  .navigation {
+    flex-flow: column wrap;
+    justify-content: center;
+    padding: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navigation a {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .navigation li:last-of-type a {
+    border-bottom: none;
   }
 }
