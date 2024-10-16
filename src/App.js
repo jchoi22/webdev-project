@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 import * as ENV from "./environments.js";
 import Parse from "parse";
 import Components from './Components/Components';

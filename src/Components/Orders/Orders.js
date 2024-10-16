@@ -1,4 +1,5 @@
 import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 const Orders = () => {
     return (
@@ -12,7 +13,7 @@ const Orders = () => {
                 <p>
                     Please fill out the following to submit which flowers you would like to
                     order. If you still need more time to look, please look at our
-                    <a href="/../flowers/index.html"> Flower Arrangements</a>
+                    <Link to="/Desserts"> Desserts </Link>
                 </p>
                 <select name="Arrangement Options">
                     <option value="pack a pink">Pack A Pink</option>

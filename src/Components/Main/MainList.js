@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const MainList = ({ desserts }) => {
   // State to handle the comments in the textarea
@@ -9,8 +10,8 @@ const MainList = ({ desserts }) => {
       <p>
         Welcome to Jaylen and Lucy's Bake shop website. From this page you are
         able to browse through different treats using the
-        <a href="/flowers/index.html"> Dessert Options</a> link and then order
-        by using the <a href="/orders/index.html">Order Forms</a> link.
+        <Link to="/Desserts"> Desserts </Link> link and then order
+        by using the <Link to="/Orders">Order Forms</Link> link.
       </p>
       <br />
       <div className="header-photos">
@@ -44,7 +45,7 @@ const MainList = ({ desserts }) => {
         <p>
           Please fill out the following to submit which items you would like to
           order if you still need more time to look please look at our
-          <a href="/../flowers/index.html"> Bakery Options</a>
+          <Link to="/Desserts"> Bakery Options</Link>
         </p>
         <select name="Arrangement Options">
           <option value="shortcake">Shortcake</option>

@@ -1,5 +1,7 @@
 import './Desserts.css'; 
 import Footer from "../Footer/Footer"
+import { Link } from "react-router-dom";
+
 const Desserts = () => {
     return (
         <div>
@@ -61,7 +63,7 @@ const Desserts = () => {
             <br />
             <p style={{ fontSize: "35px" }}>
                 Check back for more options...But if you're happy now, you can always
-                <a href="/../orders/index.html"> ORDER HERE</a>
+                <Link to = "/Orders"> ORDER HERE </Link>
             </p>
         </div>
     );
