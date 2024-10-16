@@ -5,12 +5,12 @@ import * as ENV from "./environments.js";
 import Parse from "parse";
 
 Parse.initialize(ENV.APPLICATION_ID, ENV.JAVASCRIPT_KEY);
-Parse.serverURL(ENV.SERVER_URL);
+Parse.serverURL = ENV.SERVER_URL; // Assigning the URL
 
 function App() {
   return (
     <div className="App">
-    <Main/>
+      <Main/>
     </div>
   );
 }
