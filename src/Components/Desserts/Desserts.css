@@ -1,0 +1,97 @@
+body {
+    background-color: rgb(191, 220, 245);
+    font-family: "Bebas Neue", sans-serif;
+}
+
+a {
+    color: #b42798; /* Set a custom color for links */
+    text-decoration: none; /* Remove underline */
+}
+
+/* for hover */
+a:hover {
+    color: #18416e;
+    text-decoration: underline; /* underline on hover */
+}
+
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue:400,900");
+@import url("https://fonts.googleapis.com/css?family=Send+Flowers:400,900");
+
+h1 {
+    font-family: "Send Flowers", sans-serif;
+    background-color: rgb(106, 144, 205);
+    border-radius: 5px; /* Round the corners */
+    font-weight: 400;
+    font-size: 35px;
+}
+
+h3 {
+    color: #b42798;
+    font-size: 40px;
+    margin: 0;
+}
+
+h4 {
+    color: #b42798;
+    font-size: 28px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.navigation {
+    /* Flexbox styles */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    background: rgb(238, 139, 204);
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+}
+
+.navigation a:hover {
+    background: #106e4d;
+}
+
+/* Change for better mobile experience */
+@media all and (max-width: 350px) {
+    .navigation {
+        flex-flow: column wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .navigation a {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .navigation li:last-of-type a {
+        border-bottom: none;
+    }
+}
+
+/* Have the text be on the side of each image; use flexbox */
+.images-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.images {
+    display: flex;
+    align-items: center;
+}
+
+/* Space between image and text */
+.images img {
+    margin-right: 10px;
+}
