@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 
 const MainList = ({ desserts }) => {
+  // State to handle the comments in the textarea
+  const [comments, setComments] = useState("Give us feedback!!!");
+
   return (
     <div>
       <p>
@@ -28,9 +31,13 @@ const MainList = ({ desserts }) => {
           We are so happy that you chose to shop with us today! If you have any
           questions, concerns, or comments feel free to leave them below!
         </p>
-        <textarea name="comments" cols="20" rows="4">
-          Give us feedback!!!
-        </textarea>
+        <textarea
+          name="comments"
+          cols="20"
+          rows="4"
+          value={comments} // Set the value prop
+          onChange={(e) => setComments(e.target.value)} // Handle change
+        />
         <input type="submit" name="button" />
       </form>
       <form action="#" className="submit-form">

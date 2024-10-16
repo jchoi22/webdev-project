@@ -1,7 +1,8 @@
+import './Main.css';
 import { useEffect, useState } from "react";
 import MainList from './MainList.js';
-import { getDesserts } from '../Services/DessertList.js'; // Import the dessert service
-
+import { getDesserts } from '../../Services/DessertList.js'; // Import the dessert service
+import Footer from "../Footer/Footer";
 const Main = () => {
   const [desserts, setDesserts] = useState([]);
 
@@ -18,13 +19,7 @@ const Main = () => {
   return (
     <div>
       <h1>Jaylen and Lucy's Bake Shop</h1>
-      <nav>
-        <ul className="navigation">
-          <li><a href="./">Home</a></li>
-          <li><a href="./">Order Forms</a></li>
-          <li><a href="./">Bakery Options</a></li>
-        </ul>
-      </nav>
+<Footer/>
       <MainList desserts={desserts} />
     </div>
   );
