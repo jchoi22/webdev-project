@@ -1,11 +1,15 @@
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
+import OrdersNum from './OrdersNum';
+import { getOrderCount } from '../../Services/Order.js'; // Import the dessert service
+
 
 const Orders = () => {
     return (
         <div>
             <h1>Order Form</h1>
             <Footer />
+            <OrdersNum />
             <br />
 
             {/* Selection for order can be made here with dropdown */}

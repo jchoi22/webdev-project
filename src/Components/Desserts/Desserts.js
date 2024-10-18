@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const Desserts = () => {
     return (
         <div>
-            <h1>Flower Arrangement Options</h1>
+            <h1>Menu</h1>
             <Footer />
             <p style={{ margin: "1rem 0" }}>
-                Browse through the various options before you make a decision on which arrangement to order!
+                Browse through the various options before you make a decision on which dessert to order!
             </p>
 
             <h3>Our Options:</h3>
