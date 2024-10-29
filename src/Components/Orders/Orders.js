@@ -20,12 +20,12 @@ const Orders = () => {
                     <Link to="/Desserts"> Desserts </Link>
                 </p>
                 <select name="Arrangement Options">
-                    <option value="pack a pink">Pack A Pink</option>
-                    <option value="the hulk">The Hulk</option>
-                    <option value="to be or not tulip">To Be Or Not Tulip</option>
-                    <option value="christmas cheer">Christmas Cheer</option>
-                    <option value="super spring">Super Spring</option>
-                    <option value="pretty peony">Pretty Peony</option>
+                    <option value="brown butter">Brown Butter Chip Cookies</option>
+                    <option value="the mini sam">The Mini Sam</option>
+                    <option value="Funfetti">Fun-tastic Funfetti Cookie</option>
+                    <option value="Oat of this World">Oat of This World</option>
+                    <option value="Frosting the Snowman">Frosting the Snowman</option>
+                    <option value="Shortbread Dream">Shortbread Dream</option>
                 </select>
                 {/* Need to add submit button to actually send results */}
                 <input type="submit" name="button" />
