@@ -1,6 +1,16 @@
-# Our Diagrams
+# README
+Jayden Choi and Lucy Ordway
 
-# Jaylen Choi and Lucy Ordway
+Our diagrams:
+
+Tree:
+
+<img width="200" alt="Screen Shot 2024-10-18 at 2 27 26 PM" src="https://github.com/user-attachments/assets/ac3089c0-40b9-4eb0-8161-290f6075c6d3">
+
+UML:
+
+<img width="200" alt="Screen Shot 2024-10-18 at 2 27 46 PM" src="https://github.com/user-attachments/assets/7d0072ab-0d8d-482e-b806-4ceabb171ede">
+
 
 # Getting Started with Create React App
 
