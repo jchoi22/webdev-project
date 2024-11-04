@@ -41,30 +41,7 @@ const MainList = ({ desserts }) => {
         />
         <input type="submit" name="button" />
       </form>
-      <form action="#" className="submit-form">
-        <p>
-          Please fill out the following to submit which items you would like to
-          order if you still need more time to look please look at our
-          <Link to="/Desserts"> Bakery Options</Link>
-        </p>
-        <select name="Arrangement Options">
-          <option value="shortcake">Shortcake</option>
-          <option value="oatmeal_cookie">Oatmeal Cookie</option>
-          <option value="twix">Shortbread Cookie</option>
-          <option value="birthday cake">Birthday Cake</option>
-          <option value="meringues">Meringues</option>
-          <option value="pie">Apple Pie</option>
-        </select>
-        <input type="submit" name="button" />
-      </form>
-      <form action="#" className="choose-file">
-        <p>
-          Or if you want something custom, upload photos of what you had in mind
-          here:
-        </p>
-        <input type="file" />
-        <input type="submit" value="Upload" name="button" />
-      </form>
+      
     </div>
   );
 };
