@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import MainList from './MainList.js';
 import { getDesserts } from '../../Services/DessertList.js'; // Import the dessert service
 import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
+
 const Main = () => {
   const [desserts, setDesserts] = useState([]);
 
@@ -20,6 +22,7 @@ const Main = () => {
     <div>
       <h1>Jaylen and Lucy's Bake Shop</h1>
 <Footer/>
+
       <MainList desserts={desserts} />
     </div>
   );
