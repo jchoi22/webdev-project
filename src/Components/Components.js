@@ -1,6 +1,7 @@
-import Main from "./Main/Main"
-import Orders from "./Orders/Orders"
+import Main from "./Main/Main";
+import Orders from "./Orders/Orders";
 import Desserts from "./Desserts/Desserts";
+import Cart from "./Cart/Cart";
 import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
 import AuthModule from "./Auth/Auth.js";
 import AuthRegister from "./Auth/AuthRegister";
@@ -21,6 +22,7 @@ export default function Components() {
         <Route path="/" element={<ProtectedRoute element={Main} />} />
         <Route path="/Orders" element={<ProtectedRoute element={Orders} />} />
         <Route path="/Desserts" element={<ProtectedRoute element={Desserts} />} />
+        <Route path="/Cart" element={<ProtectedRoute element={Cart} />} />
 
         <Route path="*" element={<Navigate to="/auth" replace />} />
       </Routes>

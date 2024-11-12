@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 const Desserts = () => {
     return (
         <div>
-            <h1>Menu</h1>
+            <div id="header">
             <Footer />
+            <h2>Menu</h2>
+            </div>
             <p style={{ margin: "1rem 0" }}>
                 Browse through the various options before you make a decision on which dessert to order!
             </p>
@@ -79,7 +81,7 @@ const Desserts = () => {
                     {
                         src: "../images/birthday_1.png",
                         alt: "birthday cake",
-                        title: "BIrthday Cake",
+                        title: "Birthday Cake",
                         description: "Have someone you want to celebrate. Order their birthday cake here!"
                     }
                 ].map((flower, index) => (
@@ -98,7 +100,7 @@ const Desserts = () => {
                     {
                         src: "../images/pie.png",
                         alt: "apple pie",
-                        title: "Caramel APple Pie",
+                        title: "Caramel Apple Pie",
                         description: "This award winning caramel apple pie is perfect for any occasion. If you want to celebrate a holiday or to just celebrate the week."
                     },
                     {
