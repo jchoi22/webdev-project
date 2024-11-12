@@ -18,10 +18,11 @@ a:hover {
 @import url("https://fonts.googleapis.com/css?family=Bebas+Neue:400,900");
 @import url("https://fonts.googleapis.com/css?family=Send+Flowers:400,900");
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,900");
+@import url("https://fonts.googleapis.com/css?family=Anton+SC&family=Bungee&family=Oswald:400,900");
 
 /* Styling for h1 */
 h1 {
-  font-family: "Send Flowers", sans-serif;
+  font-family: "Anton SC", sans-serif;
   background-color: rgb(106, 144, 205);
   border-radius: 5px; /* Round the corners */
   font-weight: 400;

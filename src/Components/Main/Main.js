@@ -20,9 +20,10 @@ const Main = () => {
 
   return (
     <div>
-      <h1>Jaylen and Lucy's Bake Shop</h1>
-<Footer/>
-
+    <div id="header">
+    <Footer/>
+    <h1>Jaylen and Lucy's <br/>Bake Shop</h1>
+    </div>
       <MainList desserts={desserts} />
     </div>
   );

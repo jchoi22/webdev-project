@@ -18,14 +18,23 @@ body {
   @import url("https://fonts.googleapis.com/css?family=Bebas+Neue:400,900");
   @import url("https://fonts.googleapis.com/css?family=Send+Flowers:400,900");
   @import url("https://fonts.googleapis.com/css?family=Oswald:400,900");
+  @import url("https://fonts.googleapis.com/css?family=Anton+SC&family=Bungee&family=Oswald:400,900");
+  
+  #header {
+    font-family: "Anton SC", sans-serif;
+    background-color: rgb(133, 167, 221);
+    padding: 10px;
+    color: rgb(19, 33, 72);
+  }
   
   /* Styling for h1 */
   h1 {
-    font-family: "Send Flowers", sans-serif;
-    background-color: rgb(106, 144, 205);
+    font-family: "Anton SC", sans-serif;
+   /* background-color: rgb(97, 143, 218);
     border-radius: 5px; /* Round the corners */
     font-weight: 400;
-    font-size: 50px;
+    font-size: 90;
+    text-align: center;
   }
   
   /* Submit form styles */
@@ -124,4 +133,31 @@ body {
       border-bottom: none;
     }
   }
+
+  /*Cart*/
+  svg{
+    width: 30px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.icon-cart{
+    position: relative;
+}
+.icon-cart span{
+    position: absolute;
+    background-color: rgb(174, 7, 7);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: 50%;
+    right: -20px;
+}
   

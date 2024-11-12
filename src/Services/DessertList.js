@@ -11,6 +11,8 @@ export const getDesserts = async () => {
       id: dessert.id,
       imgName: dessert.get("imgName"),
       dessertDetails: dessert.get("dessertDesc"),
+      dessertPrice: dessert.get("price"),
+      dessertTitle: dessert.get("DessertTitle")
     }));
   } catch (error) {
     console.error("Error while fetching desserts: ", error);
