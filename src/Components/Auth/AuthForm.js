@@ -3,7 +3,7 @@ import React from "react";
 const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
 
   return (
-    <form onSubmit={onSubmit} autoComplete="off">
+    <form className="register-form" onSubmit={onSubmit} autoComplete="off">
     {!isLogin ? 
     <div>
         <div className="form-group">
@@ -30,6 +30,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
             value={user.lastName}
             onChange={onChange}
             name="lastName"
+            placeholder="last name"
             required
           />
         </div>{" "}
@@ -45,6 +46,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
             value={user.email}
             onChange={onChange}
             name="email"
+            placeholder="email"
             required
           />
         </div>{" "}
@@ -58,12 +60,13 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
             value={user.password}
             onChange={onChange}
             name="password"
-            min="0"
+            min="1"
+            placeholder="password"
             required
           />
         </div>
         <div className="form-group">
-          <button type="submit" className="btn btn-primary" onSubmit={onSubmit}>
+          <button type="submit" className="logout-button" onSubmit={onSubmit}>
             Submit
           </button>
         </div>

@@ -61,6 +61,7 @@ const AuthRegister = () => {
 
   return (
     <div>
+      <p>Register here</p>
       <AuthForm
         user={newUser}
         onChange={onChangeHandler}
