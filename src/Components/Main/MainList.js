@@ -7,12 +7,6 @@ const MainList = ({ desserts }) => {
 
   return (
     <div>
-      <p>
-        Welcome to Jaylen and Lucy's Bake shop website. From this page you are
-        able to browse through different treats using the
-        <Link to="/Desserts"> Desserts </Link> link and then order
-        by using the <Link to="/Orders">Order Forms</Link> link.
-      </p>
       <br />
       <div className="header-photos">
         <ul>
