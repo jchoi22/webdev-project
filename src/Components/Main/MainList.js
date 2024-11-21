@@ -1,10 +1,29 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Parse from "parse";
 
 const MainList = ({ desserts }) => {
   // State to handle the comments in the textarea
   const [comments, setComments] = useState("Give us feedback!!!");
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+    if (!comments.trim() || comments === "Give us feedback!!!") {
+      alert("Please enter valid feedback before submitting.");
+      return;
+    }
 
+    const Feedback = new Parse.Object("Feedback");
+    Feedback.set("Submission", comments);
+
+    try {
+      await Feedback.save();
+      alert("Feedback submitted successfully!");
+      setComments(""); // Clear the form
+    } catch (error) {
+      console.error("Error saving feedback:", error);
+      alert("There was an error saving your feedback. Please try again.");
+    }
+  };
   return (
     <div>
       <br />
@@ -21,7 +40,7 @@ const MainList = ({ desserts }) => {
         </ul>
       </div>
       <br />
-      <form action="#" className="submit-form">
+      <form action="#" className="submit-form" onSubmit={handleSubmit}>
         <p>
           We are so happy that you chose to shop with us today! If you have any
           questions, concerns, or comments feel free to leave them below!
