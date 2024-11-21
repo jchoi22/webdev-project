@@ -4,10 +4,10 @@ import Parse from "parse";
 
 const MainList = ({ desserts }) => {
   // State to handle the comments in the textarea
-  const [comments, setComments] = useState("Give us feedback!!!");
+  const [comments, setComments] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
-    if (!comments.trim() || comments === "Give us feedback!!!") {
+    if (!comments.trim() || comments === "") {
       alert("Please enter valid feedback before submitting.");
       return;
     }
@@ -49,6 +49,7 @@ const MainList = ({ desserts }) => {
           name="comments"
           cols="20"
           rows="4"
+          placeholder="Give us feedback!!!" // Use placeholder here
           value={comments} // Set the value prop
           onChange={(e) => setComments(e.target.value)} // Handle change
         />
