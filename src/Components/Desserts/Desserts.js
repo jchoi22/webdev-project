@@ -1,8 +1,99 @@
 import './Desserts.css'; 
 import Footer from "../Footer/Footer"
 import { Link } from "react-router-dom";
+import { getDesserts } from "../../Services/DessertList";
+import React, { useEffect, useState } from "react";
 
 const Desserts = () => {
+    const [desserts, setDesserts] = useState([]);
+    const [cart, setCart] = useState([]);
+
+    useEffect(() => {
+        const fetchDesserts = async () => {
+            const data = await getDesserts();
+            setDesserts(data);
+        };
+
+        fetchDesserts();
+    }, []);
+
+    const handleOrderClick = (dessert) => {
+        setCart((prevCart) => [...prevCart, dessert]); // Add dessert to the cart
+        console.log(`${dessert.dessertTitle} added to the cart`);
+    };
+    const renderDessertsByCategory = (category) => {
+        console.log("Desserts Array: ", desserts);
+        console.log("Filtering by Category: ", category);
+        const filteredDesserts = desserts.filter(
+            (dessert) => dessert.dessertCategory === category
+        );
+
+        console.log("Filtered Desserts: ", filteredDesserts);
+
+        return (
+            <div className="images-flex">
+                {filteredDesserts.map((dessert) => (
+                    <div className="images" key={dessert.id}>
+                        <img
+                            src={dessert.imgName}
+                            alt={dessert.dessertTitle}
+                            width="150"
+                            height="200"
+                        />
+                        <h4 className="title">{dessert.dessertTitle}</h4>
+                        <p className="description">{dessert.dessertDesc}</p>
+                        <br />
+                        <p className="price">  Price: ${dessert.dessertPrice.toFixed(2)}</p>
+                        <button 
+                        className="order-button" 
+                        onClick={() => handleOrderClick(dessert.id)}>Add to Cart
+                        </button>
+                    </div>
+                ))}
+            </div>
+        );
+    };
+
+    return (
+        <div>
+            
+            
+                <Footer />
+                <h2>Menu</h2>
+            
+
+            {/* Intro Text */}
+            <p style={{ margin: "1rem 0" }}>
+                Browse through the various options before you make a decision on which dessert to order!
+            </p>
+
+            {/* Desserts Menu */}
+            <h3>Our Options:</h3>
+            <br />
+
+            <h4>Cookies:</h4>
+            {renderDessertsByCategory("cookie")}
+            <br />
+
+            <h4>Cakes:</h4>
+            {renderDessertsByCategory("cake")}
+            <br />
+
+            <h4>Other:</h4>
+            {renderDessertsByCategory("other")}
+            <br />
+
+            {/* Order Link */}
+            <p style={{ fontSize: "35px" }}>
+                Check back for more options... But if you're happy now, you can always
+                <Link to="/Orders"> ORDER HERE </Link>
+            </p>
+        </div>
+    );
+};
+
+export default Desserts;
+        /*
     return (
         <div>
             <div id="header">
@@ -133,4 +224,4 @@ const Desserts = () => {
     );
 }
 
-export default Desserts;
+export default Desserts; */

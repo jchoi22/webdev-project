@@ -1,6 +1,7 @@
 body {
     background-color: rgb(191, 220, 245);
     font-family: "Bebas Neue", sans-serif;
+    padding: 20px;
 }
 
 a {
@@ -89,4 +90,40 @@ h4 {
 /* Space between image and text */
 .images img {
     margin-right: 10px;
+    
+}
+
+.description {
+    max-width: 40%; /* Adjust this value as needed */
+    word-wrap: break-word;
+    text-align: justify; 
+    margin: 5px; 
+    font-size: 20px;
+    
+}
+
+.title {
+    width: 180px; /* Adjust this value as needed */
+      
+}
+
+.price{
+    width:90px;
+    font-size: 30px;
+    margin: 20px;
+
+}
+
+.order-button {
+    border: 2px solid rgb(106, 144, 205);
+    font-family: "Bebas Neue", sans-serif;
+    border-radius: 5px;
+    color: rgb(238, 139, 204);
+    background-color: #106e4d;
+
+    
+}
+
+.order-button:hover {
+    background-color: #96c5b4;
 }
