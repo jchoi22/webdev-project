@@ -10,9 +10,10 @@ export const getDesserts = async () => {
     return results.map((dessert) => ({
       id: dessert.id,
       imgName: dessert.get("imgName"),
-      dessertDetails: dessert.get("dessertDesc"),
+      dessertDesc: dessert.get("dessertDesc"),
+      dessertCategory: dessert.get("dessertCategory"),
       dessertPrice: dessert.get("price"),
-      dessertTitle: dessert.get("DessertTitle")
+      dessertTitle: dessert.get("dessertTitle")
     }));
   } catch (error) {
     console.error("Error while fetching desserts: ", error);
