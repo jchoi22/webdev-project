@@ -1,6 +1,6 @@
 import './Cart.css'; 
-import Footer from "../Footer/Footer";
-import { Link } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -13,6 +13,14 @@ function Cart({
     onClose,
     onQuantityChange,
 }) {
+    const navigate = useNavigate();
+
+    const handleCheckout = () => {
+        if (products.length > 0) {
+            navigate('/Checkout', { state: { products } }); 
+        }
+    };
+
 	return (
 		<div className="modal" 
         style={{
@@ -60,7 +68,7 @@ function Cart({
                 </div>
 
             ))}
-            {products.length > 0 && <button className="checkout-button">Proceed to checkout</button>}
+            {products.length > 0 && <button className="checkout-button" onClick={handleCheckout}>Proceed to checkout</button>}
 
              </div>
         </div>

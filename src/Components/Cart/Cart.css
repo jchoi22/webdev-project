@@ -90,6 +90,7 @@ header{
 .close-button:hover {
     color: rgb(174, 32, 98);
     transform: scale(1.15);
+    cursor: pointer;
 }
 
 .empty-text {
@@ -152,6 +153,7 @@ header{
 .checkout-button:hover {
     background-color: rgb(174, 32, 98);
     transform: scale(1.15);
+    cursor: pointer;
 }
 
 .remove-button{

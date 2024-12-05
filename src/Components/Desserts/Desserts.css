@@ -1,7 +1,6 @@
 body {
     background-color: rgb(191, 220, 245);
     font-family: "Bebas Neue", sans-serif;
-    padding: 20px;
 }
 
 a {
@@ -46,7 +45,6 @@ h4 {
     flex-flow: row wrap;
     justify-content: flex-end;
     list-style: none;
-    margin: 0;
     background: rgb(238, 139, 204);
     font-family: "Bebas Neue", sans-serif;
 }
