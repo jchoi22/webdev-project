@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { checkUser, createUser } from "./AuthService";
 import AuthForm from "./AuthForm";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer"
+import { Link } from "react-router-dom";
 
 const AuthRegister = () => {
   const navigate = useNavigate();
@@ -61,12 +63,18 @@ const AuthRegister = () => {
 
   return (
     <div>
+      
       <p>Register here</p>
       <AuthForm
         user={newUser}
         onChange={onChangeHandler}
         onSubmit={onSubmitHandler}
       />
+
+      <Link to="/auth/login">
+        < br/>
+        <button>Forgot you already registered? Go back to login here</button>
+      </Link>
     </div>
   );
 };
