@@ -186,7 +186,7 @@ body {
 }
 
 .form-group {
-  width:200px;
+  width:300px;
   height: 10px;
   display: flex;
   flex-direction: column; 
@@ -203,6 +203,27 @@ body {
   text-align: center;
 }
 
+.foot {
+  width: 100%; /* Ensures it spans the entire page width */
+  position: fixed; /* Makes the nav bar stick to the top */
+  top: 0; /* Positions it at the top */
+  left: 0; /* Aligns it with the left edge */
+  
+}
+
+.icon-cart span{
+  position: absolute;
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  top: 50%;
+  right: -20px;
+}
  
 
 

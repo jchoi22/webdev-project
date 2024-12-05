@@ -3,10 +3,34 @@ import Footer from "../Footer/Footer"
 import { Link } from "react-router-dom";
 import { getDesserts } from "../../Services/DessertList";
 import React, { useEffect, useState } from "react";
+import Cart from "../Cart/Cart"
+import { IoCart } from "react-icons/io5";
+
 
 const Desserts = () => {
     const [desserts, setDesserts] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [cartVisibility, setCartVisible] = useState(false);
+    /*This will allow the products to stay in the cart even if the browser is refreshed */
+    const [productsInCart, setProducts] = 
+        useState(JSON.parse( /*Will convert json string to js object */
+        localStorage.getItem("cart")) || []);
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(productsInCart))
+    }, [productsInCart]);
+    
+    const addProductToCart = (product) => {
+        const newProduct = {
+            ...product, count: 1, 
+        }
+        setProducts([...productsInCart, newProduct,]);
+    };
+
+    
+
+    const handleCartButtonClick = () => {
+        setCartVisible(true);
+      };
 
     useEffect(() => {
         const fetchDesserts = async () => {
@@ -17,10 +41,7 @@ const Desserts = () => {
         fetchDesserts();
     }, []);
 
-    const handleOrderClick = (dessert) => {
-        setCart((prevCart) => [...prevCart, dessert]); // Add dessert to the cart
-        console.log(`${dessert.dessertTitle} added to the cart`);
-    };
+    
     const renderDessertsByCategory = (category) => {
         console.log("Desserts Array: ", desserts);
         console.log("Filtering by Category: ", category);
@@ -46,7 +67,7 @@ const Desserts = () => {
                         <p className="price">  Price: ${dessert.dessertPrice.toFixed(2)}</p>
                         <button 
                         className="order-button" 
-                        onClick={() => handleOrderClick(dessert.id)}>Add to Cart
+                        onClick={() => addProductToCart(dessert)}>Add to Cart
                         </button>
                     </div>
                 ))}
@@ -54,21 +75,57 @@ const Desserts = () => {
         );
     };
 
+    const onQuantityChange = (productId, count) => {
+        setProducts((oldState) => {
+            const productsIndex = oldState.findIndex(
+                (item) => item.id === productId
+            );
+            if(productsIndex !== -1){
+                oldState[productsIndex].count =
+                    count;
+            }
+            return [...oldState];
+        })
+    }
+
+    const onProductRemove = (product) => {
+        setProducts((oldState) => {
+            const productsIndex = oldState.findIndex(
+                (item) => item.id === product.id
+            );
+            if(productsIndex !== -1){
+                oldState.splice(productsIndex, 1) /*remove only one item*/
+            }
+            return [...oldState];
+        })
+    }
+
     return (
         <div>
-            
-            
-                <Footer />
+                
+                {cartVisibility && (
+                    <Cart
+                    visibility={cartVisibility}
+                    products={productsInCart}
+                    onClose={() => setCartVisible(false)}
+                    onQuantityChange={onQuantityChange}
+                    onProductRemove={onProductRemove}
+                    />
+                )}
+
+                
+                <Footer
+                    productsInCart={productsInCart}
+                    onCartButtonClick={handleCartButtonClick}
+                />
+                
+                
                 <h2>Menu</h2>
             
-
-            {/* Intro Text */}
+            <h3>Our Options:</h3>
             <p style={{ margin: "1rem 0" }}>
                 Browse through the various options before you make a decision on which dessert to order!
             </p>
-
-            {/* Desserts Menu */}
-            <h3>Our Options:</h3>
             <br />
 
             <h4>Cookies:</h4>

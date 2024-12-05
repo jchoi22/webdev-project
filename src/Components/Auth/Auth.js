@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { checkUser } from "./AuthService";
+import Footer from "../Footer/Footer"
 
 
 const AuthModule = () => {
@@ -16,7 +17,10 @@ const AuthModule = () => {
   }, [navigate]);
 
   return (
+    <div className="header-auth">
+    <Footer />
     <div className="auth-page" > 
+    
     <p>If you are not a customer yet, then please register below</p>
       <Link to="/auth/register">
         <button className="auth-button">Register</button>
@@ -27,6 +31,7 @@ const AuthModule = () => {
       <Link to="/auth/login">
         <button className="auth-button">Login</button>
       </Link>
+    </div>
     </div>
   );
 };

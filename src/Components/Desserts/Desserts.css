@@ -1,7 +1,6 @@
 body {
     background-color: rgb(191, 220, 245);
     font-family: "Bebas Neue", sans-serif;
-    padding: 20px;
 }
 
 a {
@@ -19,7 +18,13 @@ a:hover {
 @import url("https://fonts.googleapis.com/css?family=Send+Flowers:400,900");
 @import url("https://fonts.googleapis.com/css?family=Anton+SC&family=Bungee&family=Oswald:400,900");
   
-
+h2 {
+    font-family: "Anton SC", sans-serif;
+    background-color: rgb(106, 144, 205);
+    border-radius: 5px; /* Round the corners */
+    font-weight: 400;
+    font-size: 40px;
+}
 
 h3 {
     color: #b42798;
@@ -40,7 +45,6 @@ h4 {
     flex-flow: row wrap;
     justify-content: flex-end;
     list-style: none;
-    margin: 0;
     background: rgb(238, 139, 204);
     font-family: "Bebas Neue", sans-serif;
 }
@@ -126,4 +130,25 @@ h4 {
 
 .order-button:hover {
     background-color: #96c5b4;
+}
+
+.product-count {
+	margin-top: -5px;
+	width: 20px;
+	height: 20px;
+	border-radius: 12px;
+	background-color: var(--secondary-color);
+	overflow: hidden;
+}
+
+
+
+.icon-cart {
+    border: none;
+    color: white;
+    background-color:  rgb(238, 139, 204);
+}
+
+.icon-cart:hover {
+    background-color: #106e4d;
 }

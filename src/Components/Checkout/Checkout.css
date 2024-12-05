@@ -1,0 +1,44 @@
+body {
+    font-family: 'Anton SC';
+    font-size: 15px;
+    padding: 10px;
+  }
+h3 {
+    padding: 15px;
+}
+
+
+  
+  .btn {
+    background-color: #106e4d;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+    font-family: 'Bebas Neue';
+    
+  }
+  
+  .btn:hover {
+    background-color: #275d4a;
+  }
+  
+ 
+  
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+  }
+
+ /*
+ adapted from: 
+ https://www.codewithfaraz.com/content/75/how-to-create-a-pure-css-responsive-checkout-form-page-in-two-minutes
+ */ 

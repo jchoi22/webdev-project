@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { checkUser, loginUser } from "./AuthService";
 import AuthForm from "./AuthForm";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 const AuthLogin = () => {
   const navigate = useNavigate();
@@ -58,13 +60,25 @@ const AuthLogin = () => {
 
   return (
     <div>
+      <div className="foot">
+      <Footer />
+      </div>
+      <div>
       <p>Login here</p>
+      <br />
+      <br />
+      </div>
       <AuthForm
         user={currentUser}
         isLogin={true}
         onChange={onChangeHandler}
         onSubmit={onSubmitHandler}
       />
+      <br />
+      <br />
+      <Link to="/auth/register">
+        <button>Not a user? Need to Register?</button>
+      </Link>
     </div>
   );
 };
