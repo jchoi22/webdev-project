@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { getDesserts } from "../../Services/DessertList";
 import React, { useEffect, useState } from "react";
 import Cart from "../Cart/Cart"
-import { IoCart } from "react-icons/io5";
+// import { IoCart } from "react-icons/io5";
 
 
 const Desserts = () => {

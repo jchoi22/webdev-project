@@ -10,6 +10,8 @@ import ProtectedRoute from "./ProtectedRoute/ProtectedRoute.js";
 import EmployeeDash from "./EmployeeDash/EmployeeDash";
 
 
+
+
 export default function Components({
   cartVisibility,
   setCartVisible,
@@ -21,8 +23,10 @@ export default function Components({
   return (
     <Router>
       <Routes>
+
+        <Route path="/" element={<Navigate to="/Main" replace />} />        
         
-       <Route path="/auth" element={<AuthModule />} />
+        <Route path="/auth" element={<AuthModule />} />
         <Route path="/auth/register" element={<AuthRegister />} />
         <Route path="/auth/login" element={<AuthLogin />} />
 
