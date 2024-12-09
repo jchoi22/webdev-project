@@ -1,6 +1,7 @@
 body {
     background-color: rgb(191, 220, 245);
     font-family: "Bebas Neue", sans-serif;
+    margin: 5px;
 }
 
 a {
@@ -47,6 +48,7 @@ h4 {
     list-style: none;
     background: rgb(238, 139, 204);
     font-family: "Bebas Neue", sans-serif;
+   
 }
 
 .navigation a {

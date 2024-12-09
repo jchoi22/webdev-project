@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Parse from "parse";
+import OrdersNum from "./OrdersNum.js"
 
 const EmployeeDash = () => {
     const [feedback, setFeedback] = useState([]);
@@ -53,8 +54,10 @@ const EmployeeDash = () => {
     return (
         <div className="employee-dashboard">
             <h1>Employee Dashboard</h1>
+
+            <OrdersNum /> {/*Added this but can easily take out */}
             
-            {/* Feedback Section */}
+            {/* feedback section */}
             <section>
                 <h2>User Feedback</h2>
                 {feedback.length === 0 ? (
