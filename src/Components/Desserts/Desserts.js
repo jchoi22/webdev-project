@@ -4,28 +4,17 @@ import { Link } from "react-router-dom";
 import { getDesserts } from "../../Services/DessertList";
 import React, { useContext, useEffect, useState } from "react";
 import Cart from "../Cart/Cart"
-import { IoCart } from "react-icons/io5";
-import { CartContext } from "../../context/CartContext";
+// import { IoCart } from "react-icons/io5";
+import { useCartContext } from "../Cart/CartContext";
 
 
 const Desserts = () => {
     const [desserts, setDesserts] = useState([]);
-    const [cartVisibility, setCartVisible] = useState(false);
-    /*This will allow the products to stay in the cart even if the browser is refreshed */
-    const [productsInCart, setProducts] = 
-        useState(JSON.parse( /*Will convert json string to js object */
-        localStorage.getItem("cart")) || []);
 
-    useEffect(() => {
-        localStorage.setItem("cart", JSON.stringify(productsInCart))
-    }, [productsInCart]);
+    const { cartVisibility, setCartVisible, productsInCart, addProductToCart, onQuantityChange, onProductRemove } = useCartContext();
     
-    const addProductToCart = (product) => {
-        const newProduct = {
-            ...product, count: 1, 
-        }
-        setProducts([...productsInCart, newProduct,]);
-    };
+   
+    
 
     
 
@@ -44,8 +33,7 @@ const Desserts = () => {
 
     
     const renderDessertsByCategory = (category) => {
-        console.log("Desserts Array: ", desserts);
-        console.log("Filtering by Category: ", category);
+      
         const filteredDesserts = desserts.filter(
             (dessert) => dessert.dessertCategory === category
         );
@@ -78,30 +66,7 @@ const Desserts = () => {
         );
     };
 
-    const onQuantityChange = (productId, count) => {
-        setProducts((oldState) => {
-            const productsIndex = oldState.findIndex(
-                (item) => item.id === productId
-            );
-            if(productsIndex !== -1){
-                oldState[productsIndex].count =
-                    count;
-            }
-            return [...oldState];
-        })
-    }
-
-    const onProductRemove = (product) => {
-        setProducts((oldState) => {
-            const productsIndex = oldState.findIndex(
-                (item) => item.id === product.id
-            );
-            if(productsIndex !== -1){
-                oldState.splice(productsIndex, 1) /*remove only one item*/
-            }
-            return [...oldState];
-        })
-    }
+   
 
     return (
         <div>
@@ -113,13 +78,14 @@ const Desserts = () => {
                     onClose={() => setCartVisible(false)}
                     onQuantityChange={onQuantityChange}
                     onProductRemove={onProductRemove}
+                    
                     />
                 )}
 
                 
                 <Footer
                     productsInCart={productsInCart}
-                    onCartButtonClick={handleCartButtonClick}
+                    onCartButtonClick={() => setCartVisible(true)}
                 />
                 
                 
@@ -153,4 +119,4 @@ const Desserts = () => {
 };
 
 export default Desserts;
-       
+        

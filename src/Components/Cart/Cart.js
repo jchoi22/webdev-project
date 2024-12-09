@@ -6,7 +6,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 
-function Cart({ 
+function Cart({ //pass as props
     visibility,
     products,
     onProductRemove,
@@ -17,7 +17,9 @@ function Cart({
 
     const handleCheckout = () => {
         if (products.length > 0) {
+            onClose();
             navigate('/Checkout', { state: { products } }); 
+            
         }
     };
 
@@ -62,7 +64,7 @@ function Cart({
                                     })
                             }
                         </select>
-                        <button className="remove-button" onClick={() => onProductRemove(product)}><RiDeleteBin6Line size={20} /></button>
+                        <button className="remove-button" onClick={() => onProductRemove(product.id)}><RiDeleteBin6Line size={20} /></button>
                     </div>
 
                 </div>
