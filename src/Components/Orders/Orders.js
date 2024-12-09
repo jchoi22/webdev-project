@@ -1,15 +1,16 @@
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
-import OrdersNum from './OrdersNum';
+import OrdersNum from '../EmployeeDash/OrdersNum.js';
 import { getOrderCount } from '../../Services/Order.js'; // Import the dessert service
+import CustOrders from './CustOrders.js';
 
-
+//show the customers orders but only if they are logged in
 const Orders = () => {
     return (
         <div>
-            <h1>Order Form</h1>
             <Footer />
-            <OrdersNum />
+            
+            <CustOrders /> 
             <br />
 
             {/* Selection for order can be made here with dropdown */}

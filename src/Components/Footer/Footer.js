@@ -2,22 +2,26 @@ import { Link } from "react-router-dom";
 import { GiShoppingBag } from "react-icons/gi";
 import { IoCart } from "react-icons/io5";
 import Cart from "../Cart/Cart"
+import { useContext } from "react";
+import { CartContext, useCartContext } from "../Cart/CartContext";
 
-const Footer = ({ productsInCart, onCartButtonClick }) => (
+const Footer = () => {
+  const { productsInCart, toggleCartVisibility } = useCartContext();
+  return (
   <footer>
     <nav>
       <ul className="navigation">
-        <li>
+        <li> 
           <Link to="/"> Home </Link>
         </li>
         <li>
-            <Link to = "/Orders"> Order </Link>
+            <Link to = "/Orders"> Your Orders </Link>
         </li>
         <li>
             <Link to = "/Desserts"> Desserts </Link>
         </li>
         <li>
-        <button className="icon-cart" onClick={onCartButtonClick}>
+        <button className="icon-cart" onClick={toggleCartVisibility}>
             <IoCart size={47} />
             {productsInCart && productsInCart.length > 0 && (
               <span className="product-count-bubble">{productsInCart.length}</span>
@@ -28,5 +32,6 @@ const Footer = ({ productsInCart, onCartButtonClick }) => (
     </nav>
   </footer>
 );
+  };
 
 export default Footer;
