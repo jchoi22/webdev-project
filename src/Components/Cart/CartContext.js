@@ -10,54 +10,64 @@ export const CartProvider = ({ children }) => {
     );
     const [cartVisibility, setCartVisible] = useState(false);
 
-
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(productsInCart));
     }, [productsInCart]);
 
-
-
-    //show and donlt show cart
     const toggleCartVisibility = () => {
-       
         setCartVisible((prev) => !prev);
-   
- };
+    };
 
     const onQuantityChange = (productId, count) => {
         setProducts((prev) => {
-            const productIndex = prev.findIndex((item) => item.id === productId);
-            if (productIndex !== -1) 
-            {
-             prev[productIndex].count = count;
-            }
-            return [...prev];
-            });
+            const updatedProducts = prev.map((item) =>
+                item.id === productId ? { ...item, count: parseInt(count, 10) } : item
+            );
+            return updatedProducts;
+        });
     };
 
-    //to reomve products from cart
     const onProductRemove = (productId) => {
-        setProducts((prev)  =>
-            prev.filter((product) => product.id !== productId)
-        );
+        setProducts((prev) => prev.filter((product) => product.id !== productId));
     };
-    //add priducst but will only be used in desserts.js
+
     const addProductToCart = (product) => {
-        const newProduct = { ...product, count: 1 };
-        setProducts([...productsInCart, newProduct]);
+        setProducts((prev) => {
+            const existingProductIndex = prev.findIndex((item) => item.id === product.id);
+
+            if (existingProductIndex !== -1) {
+                // If the product is already in the cart, create a new array with updated quantity
+                const updatedProducts = prev.map((item, index) =>
+                    index === existingProductIndex
+                        ? { ...item, count: item.count + 1 }
+                        : item
+                );
+                return updatedProducts;
+            } else {
+                // If the product is not in the cart, add it with count 1
+                return [...prev, { ...product, count: 1 }];
+            }
+        });
     };
 
     return (
-        <CartContext.Provider value={{ 
-            productsInCart, addProductToCart, setProducts, cartVisibility,
-            toggleCartVisibility,
-            onQuantityChange,
-            onProductRemove, 
-            setCartVisible, }}>
+        <CartContext.Provider
+            value={{
+                productsInCart,
+                addProductToCart,
+                setProducts,
+                cartVisibility,
+                toggleCartVisibility,
+                onQuantityChange,
+                onProductRemove,
+                setCartVisible,
+            }}
+        >
             {children}
-
         </CartContext.Provider>
     );
 };
+
+
 
 export const useCartContext = () => useContext(CartContext);
