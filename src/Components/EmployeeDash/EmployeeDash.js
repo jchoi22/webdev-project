@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Parse from "parse";
 import OrdersNum from "./OrdersNum.js"
+import LogoutButton from "../Auth/LogoutButton.js";
 
 const EmployeeDash = () => {
     const [feedback, setFeedback] = useState([]);
@@ -99,6 +100,7 @@ const EmployeeDash = () => {
                     </ul>
                 )}
             </section>
+            < LogoutButton/>
         </div>
     );
 };

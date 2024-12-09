@@ -29,16 +29,19 @@ const AuthLogin = () => {
     if (currentUser && add) {
       loginUser(currentUser).then((userLoggedIn) => {
         if (userLoggedIn) {
-          alert(
-            `${userLoggedIn.get("firstName")}, you successfully logged in!`
-          );
-          navigate("/");
+          const email = userLoggedIn.get("email");
+          alert(`${userLoggedIn.get("firstName")}, you successfully logged in!`);
+          if (email.endsWith("@employee.com")) {
+            navigate("/EmployeeDash");
+          } else {
+            navigate("/");
+          }
         }
-        // TODO: redirect user to main app
         setAdd(false);
       });
     }
   }, [navigate, currentUser, add]);
+  
 
   const onChangeHandler = (e) => {
     e.preventDefault();

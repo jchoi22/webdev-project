@@ -54,7 +54,12 @@ export default function Components(){
                     <Route path="/Checkout" element={<ProtectedRoute element={Checkout} />} />
 
                     
-                    <Route path="/EmployeeDash" element={<ProtectedRoute element={EmployeeDash} />} />
+                    <Route
+                      path="/EmployeeDash"
+                      element={<ProtectedRoute element={EmployeeDash} requiredDomain="@employee.com" />}
+                    />
+
+
 
                     
                     <Route path="*" element={<Navigate to="/auth" replace />} />
