@@ -149,8 +149,8 @@ body {
 }
 
 .auth-page {
-  width:300px;
-  height: 500px;
+  width:400px;
+  height: 700px;
   display: flex;
   flex-direction: column; 
   justify-content: center;
@@ -186,8 +186,8 @@ body {
 }
 
 .form-group {
-  width:300px;
-  height: 10px;
+  width:400px;
+  height: 150px;
   display: flex;
   flex-direction: column; 
   justify-content: center;
@@ -202,6 +202,11 @@ body {
   border-radius: 5px; 
   text-align: center;
 }
+
+.form-control {
+  font-family:'Anton SC', Times, serif;
+}
+
 
 .foot {
   width: 100%; 

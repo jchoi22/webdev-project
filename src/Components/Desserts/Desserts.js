@@ -1,3 +1,4 @@
+
 import './Desserts.css'; 
 import Footer from "../Footer/Footer"
 import { Link } from "react-router-dom";
@@ -10,12 +11,11 @@ import { useCartContext } from "../Cart/CartContext";
 
 const Desserts = () => {
     const [desserts, setDesserts] = useState([]);
+    const [searchTerm, setSearchTerm] = useState(""); //state for the search
 
     const { cartVisibility, setCartVisible, productsInCart, addProductToCart, onQuantityChange, onProductRemove } = useCartContext();
     
    
-    
-
     
 
     const handleCartButtonClick = () => {
@@ -31,7 +31,14 @@ const Desserts = () => {
         fetchDesserts();
     }, []);
 
-    
+    //for the search portion
+    const highlightText = (text, term) => { //highlight the term for the search
+        if (!term) return text;
+        const regex = new RegExp(`(${term})`, "gi");
+        return text.replace(regex, '<span class="highlight">$1</span>');
+    };
+
+
     const renderDessertsByCategory = (category) => {
       
         const filteredDesserts = desserts.filter(
@@ -109,7 +116,7 @@ const Desserts = () => {
             {renderDessertsByCategory("other")}
             <br />
 
-            {/* Order Link */}
+            {/* Order Link */ }
             <p style={{ fontSize: "35px" }}>
                 Check back for more options... But if you're happy now, you can always
                 <Link to="/Orders"> ORDER HERE </Link>
@@ -119,4 +126,5 @@ const Desserts = () => {
 };
 
 export default Desserts;
-        
+
+
