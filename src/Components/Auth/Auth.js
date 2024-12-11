@@ -18,7 +18,6 @@ const AuthModule = () => {
 
   return (
     <div className="header-auth">
-    <Footer />
     <div className="auth-page" > 
     
     <p>If you are not a customer yet, then please register below</p>

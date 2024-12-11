@@ -41,27 +41,22 @@ export default function Components(){
 
                 
                 <Routes>
-                    <Route path="/" element={<Navigate to="/Main" replace />} />
+                  <Route path="/" element={<Main />} />
+                  <Route path="/Desserts" element={<Desserts />} />
+                  
+                  <Route path="/auth" element={<AuthModule />} />
+                  <Route path="/auth/register" element={<AuthRegister />} />
+                  <Route path="/auth/login" element={<AuthLogin />} />
+                  
+                  <Route path="/Orders" element={<ProtectedRoute element={Orders} />} />
+                  <Route path="/Checkout" element={<ProtectedRoute element={Checkout} />} />
+                  
+                  <Route
+                    path="/EmployeeDash"
+                    element={<ProtectedRoute element={EmployeeDash} requiredDomain="@employee.com" />}
+                  />
 
-                    <Route path="/auth" element={<AuthModule />} />
-                    <Route path="/auth/register" element={<AuthRegister />} />
-                    <Route path="/auth/login" element={<AuthLogin />} />
-
-                    <Route path="/Main" element={<ProtectedRoute element={Main} />} />
-                    <Route path="/Desserts" element={<ProtectedRoute element={Desserts} />} />
-                    <Route path="/Orders" element={<ProtectedRoute element={Orders} />} />
-                    <Route path="/Checkout" element={<ProtectedRoute element={Checkout} />} />
-
-                    
-                    <Route
-                      path="/EmployeeDash"
-                      element={<ProtectedRoute element={EmployeeDash} requiredDomain="@employee.com" />}
-                    />
-
-
-
-                    
-                    <Route path="*" element={<Navigate to="/auth" replace />} />
+                  <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
 
                
