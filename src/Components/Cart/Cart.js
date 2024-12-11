@@ -6,7 +6,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 
-function Cart({ //pass as props
+function Cart({ //passed as props from cartcontext
     visibility,
     products,
     onProductRemove,
@@ -15,6 +15,7 @@ function Cart({ //pass as props
 }) {
     const navigate = useNavigate();
 
+    //go to checkout page and then close the cart
     const handleCheckout = () => {
         if (products.length > 0) {
             onClose();
@@ -23,6 +24,7 @@ function Cart({ //pass as props
         }
     };
 
+    //show all the elements in the cart, change quantity, close cart, and go to checkout
 	return (
 		<div className="modal" 
         style={{
@@ -44,13 +46,16 @@ function Cart({ //pass as props
             )}
             {products.map(product => (
                 <div className="cart-product" key={product.id}>
+
                     <img src={product.imgName} alt={product.dessertDesc}/>
                     <div className="product-info">
                         <h3>{product.dessertTitle}</h3>
                         <span className="product-price">
+
                         ${(product.dessertPrice * product.count).toFixed(2)}
                         </span>
                     </div>
+                    
                     <div>
                         <select className="count" value={product.count} /*select the number of the product*/
                         onChange={(event) => {
@@ -65,6 +70,7 @@ function Cart({ //pass as props
                             }
                         </select>
                         <button className="remove-button" onClick={() => onProductRemove(product.id)}><RiDeleteBin6Line size={20} /></button>
+                    
                     </div>
 
                 </div>

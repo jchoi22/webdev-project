@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { GiShoppingBag } from "react-icons/gi";
+
 import { IoCart } from "react-icons/io5";
-import Cart from "../Cart/Cart"
-import { useContext } from "react";
-import { CartContext, useCartContext } from "../Cart/CartContext";
+
+import { useCartContext } from "../Cart/CartContext";
 
 const Footer = () => {
   const { productsInCart, toggleCartVisibility } = useCartContext();

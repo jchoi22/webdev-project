@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getOrderCount } from "../../Services/Order"; // Ensure the path is correct
+import { getOrderCount } from "../../Services/Order"; 
 
 
 const OrdersNum = () => {

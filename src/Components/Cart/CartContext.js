@@ -1,19 +1,21 @@
 //Manage the state of the cart globally
 //can remove all items from cart on submit and can access from any page on nav
+//cart can be modified from more than just desserts page
 import { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-    const [productsInCart, setProducts] = useState(
+    const [productsInCart, setProducts] = useState( //tracks the products in the cart from local storage
         JSON.parse(localStorage.getItem("cart")) || []
     );
-    const [cartVisibility, setCartVisible] = useState(false);
+    const [cartVisibility, setCartVisible] = useState(false); //manages the visibilty of the cart
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(productsInCart));
     }, [productsInCart]);
 
+    //utility functions for cart interaction
     const toggleCartVisibility = () => {
         setCartVisible((prev) => !prev);
     };
@@ -51,7 +53,8 @@ export const CartProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider
+        //makes avaialble to all child '{children}' components when wrapped - wrapped in app.js
+        <CartContext.Provider 
             value={{
                 productsInCart,
                 addProductToCart,
@@ -63,7 +66,7 @@ export const CartProvider = ({ children }) => {
                 setCartVisible,
             }}
         >
-            {children}
+            {children} 
         </CartContext.Provider>
     );
 };

@@ -8,7 +8,7 @@ const UserOrders = () => {
   useEffect(() => {
     const fetchUserOrders = async () => {
      
-        const userOrders = await getOrdersByUserEmail();
+        const userOrders = await getOrdersByUserEmail(); //load from the service
         setOrders(userOrders);
       
     };
@@ -17,7 +17,7 @@ const UserOrders = () => {
   }, []);
 
   
-//need to fix this part because it does not show the dessert title 
+//display the past orders
   return (
     <div>
       <h2>Your Orders</h2>
@@ -26,7 +26,7 @@ const UserOrders = () => {
       ) : (
         <ul>
         {orders.map((order) => {
-          const desserts = order.get("Desserts"); 
+          order.get("Desserts"); 
           return (
             <div className="order-areas">
             <li key={order.id}>

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+
 import Parse from "parse";
 
 const MainList = ({ desserts }) => {
@@ -33,7 +33,7 @@ const MainList = ({ desserts }) => {
             <li key={dessert.id}>
               <img
                 src={`/images/${dessert.imgName}`}
-                alt={`${dessert.dessertDetails}'s picture`}
+                alt={`${dessert.dessertDetails}`}
               />
             </li>
           ))}

@@ -8,7 +8,6 @@ import AuthRegister from "./Auth/AuthRegister";
 import AuthLogin from "./Auth/AuthLogin";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute.js";
 import EmployeeDash from "./EmployeeDash/EmployeeDash";
-import Footer from "./Footer/Footer";
 import Cart from "./Cart/Cart";
 import { useCartContext } from "./Cart/CartContext";
 

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { checkUser, createUser } from "./AuthService";
 import AuthForm from "./AuthForm";
 import { useNavigate } from "react-router-dom";
-import Footer from "../Footer/Footer"
 import { Link } from "react-router-dom";
 
 const AuthRegister = () => {

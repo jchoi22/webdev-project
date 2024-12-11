@@ -53,15 +53,16 @@ const Checkout = () => {
         }
     };
 
+    //return the page if checkout was successful
     if (cartCleared) {
         return (
             <div>
                 <h3>Your order was placed successfully!</h3>
                 <p>Please visit 123 imaginary road anytime between 8am and 5pm to pick it up!</p>
+                
                 <button
                     onClick={() => navigate("/")} // navigate to home page
-                    className="go-home-button"
-                >
+                    className="go-home-button">
                     Go Home
                 </button>
             </div>
@@ -69,16 +70,19 @@ const Checkout = () => {
     }
 
     return (
+
         <div>
             <h3>Please finish your order here by providing a few more details!</h3>
             <Link to={-1}>&larr; Want to order more? Go back now</Link>
             <div className="show-cart">
                 <h4>Your Cart:</h4>
                 {products.map(product => (
+
                     <div className="cart-item" key={product.id}>
                         <div className="cart-text">
                         <p>{product.dessertTitle}</p>
                         <p>Quantity: {product.count}</p>
+
                         <p>Price: ${(product.dessertPrice * product.count).toFixed(2)}</p>
                         </div>
                         <img
@@ -197,6 +201,7 @@ const Checkout = () => {
               
               
              </form>
+             
              <button onClick={handleCheckout} className="checkout-button">
                 Submit Order
             </button>
