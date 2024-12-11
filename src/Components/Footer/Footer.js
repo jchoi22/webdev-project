@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Parse from "parse";
 import { IoCart } from "react-icons/io5";
-import { CartContext, useCartContext } from "../Cart/CartContext";
+import { useCartContext } from "../Cart/CartContext";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

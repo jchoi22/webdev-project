@@ -110,19 +110,3 @@ h1 {
     }
 }
 
-.order-areas {
-    background-color: #ffffff; /* White background for the box */
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 15px; /* Space inside the box */
-    margin-bottom: 20px; /* Space between each order */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for a lifted effect */
-  }
-  
-  .order-areas p {
-    margin: 5px 0; /* Spacing between text lines inside the box */
-  }
-  
-  .order-areas li {
-    list-style-type: none; /* Remove bullet points */
-  }

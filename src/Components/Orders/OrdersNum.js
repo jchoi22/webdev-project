@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getOrderCount } from "../../Services/Order"; // Ensure the path is correct
-import Footer from "../Footer/Footer";
+
 
 const OrdersNum = () => {
   const [orderCount, setOrderCount] = useState(0);
