@@ -64,7 +64,6 @@ const AuthLogin = () => {
   return (
     <div>
       
-      <Footer />
       
       <div>
       <p>Login here</p>
