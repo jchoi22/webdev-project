@@ -31,7 +31,6 @@ const UserOrders = () => {
             <div className="order-areas">
             <li key={order.id}>
               <p>Order ID: {order.id}</p>
-              
               <p>Order Date: {order.get("createdAt").toLocaleDateString()}</p>
             </li>
             </div>

@@ -24,11 +24,13 @@ const AuthModule = () => {
       <Link to="/auth/register">
         <button className="auth-button">Register</button>
       </Link>
-      <br />
-      <br />
       <p>If you are already a customer, welcome back. Please login below!</p>
       <Link to="/auth/login">
         <button className="auth-button">Login</button>
+      </Link>
+      <p>Continue as guest!</p>
+      <Link to="/Main">
+        <button className="auth-button">Guest</button>
       </Link>
     </div>
     </div>
