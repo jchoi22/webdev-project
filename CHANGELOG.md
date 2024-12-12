@@ -1,6 +1,15 @@
 # Change Log
 
 ### Added
+This is for feature 6. We have added an employee and customer dashboard, as well as a cart and checkout page. The page has also been added to netlify and can be hosted there
+ 
+### Changed
+ The auth is fixed and rerouted and the css has been updated
+### Fixed
+ 
+## [0.4.0] - 2024-11-07
+
+### Added
 Add authentication and authorization to the site with a login page
  
 ### Changed
