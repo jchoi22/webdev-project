@@ -1,6 +1,8 @@
 # README
 Jayden Choi and Lucy Ordway
 
+You may need to run npm install react-icons --save because sometimes there is an error
+
 Our diagrams:
 
 Tree:
