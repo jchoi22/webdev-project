@@ -7,7 +7,7 @@ This is for feature 6. We have added an employee and customer dashboard, as well
  The auth is fixed and rerouted and the css has been updated
 ### Fixed
  
-## [0.4.0] - 2024-11-07
+## [0.4.0] - 2024-12-12
 
 ### Added
 Add authentication and authorization to the site with a login page
