@@ -4,7 +4,7 @@ import AuthForm from "./AuthForm";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Button, Typography, Box } from "@mui/material"; //import materialUI
-import "./AuthRegister.css"; //import the new css that uses materialUI
+ //import the new css that uses materialUI
 
 const AuthRegister = () => {
   const navigate = useNavigate();
