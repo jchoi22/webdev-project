@@ -303,5 +303,16 @@ cursor: pointer;
 } 
 
 
+.custom-button {
+  color: black;
+  background-color: lightgray;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  
+}
 
+.custom-button:hover {
+  background-color: gray;
+}
 

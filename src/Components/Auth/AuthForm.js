@@ -1,76 +1,92 @@
 import React from "react";
+import { TextField, Button, Grid2 } from "@mui/material"; //import MaterialUI
 
 const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
 
   return (
-    <form className="register-form" onSubmit={onSubmit} autoComplete="off">
-    {!isLogin ? 
-    <div>
-        <div className="form-group">
-          <label>First Name</label>
-          <br />
-          <input
-            type="text"
-            className="form-control"
-            id="first-name-input"
+    <form onSubmit={onSubmit} autoComplete="off">
+      <Grid2 container spacing={2} sx={{ maxWidth: 400, margin: "auto", textAlign: "center" }}>
+    {!isLogin && (
+    <>
+    <Grid2 container spacing={2}>
+        <Grid2 item xs={12}>
+          <TextField
+            sx={{ width: 400 }}
+            fullWidth
+            label="First Name"
+            type = "firstName"
+            variant="outlined"
             value={user.firstName}
             onChange={onChange}
             name="firstName"
-            placeholder="first name"
+            
             required
           />
-        </div>
-        <div className="form-group">
-          <label>Last Name</label>
-          <br />
-          <input
-            type="text"
-            className="form-control"
-            id="last-name-input"
+          </Grid2>
+          <Grid2 item xs={12}>
+          <TextField sx={{ width: 400 }}
+            fullWidth
+            label="Last Name"
+            type="lastName"
+            variant="outlined"
             value={user.lastName}
             onChange={onChange}
             name="lastName"
-            placeholder="last name"
+            
             required
           />
-        </div>{" "}
-        </div> : <></>}
-        <div>
-        <div className="form-group">
-          <label>Email</label>
-          <br />
-          <input
+          </Grid2>
+          </Grid2>
+        </>
+    )}
+    <Grid2 container spacing={2} mt={2}>
+        <Grid2 item xs={12}>
+          <TextField sx={{ width: 400 }}
+            fullWidth
+            label="Email"
             type="email"
-            className="form-control"
-            id="email-input"
+            variant="outlined"
             value={user.email}
             onChange={onChange}
             name="email"
-            placeholder="email"
+            
             required
           />
-        </div>{" "}
-        <div className="form-group">
-          <label>Password</label>
-          <br />
-          <input
+          </Grid2>
+          <Grid2 item xs={12}>
+          <TextField sx={{ width: 400 }}
+            fullWidth
+            label="Password"
             type="password"
-            className="form-control"
-            id="password-input"
+            variant="outlined"
             value={user.password}
             onChange={onChange}
             name="password"
-            min="1"
-            placeholder="password"
             required
           />
-        </div>
-        <div className="form-group">
-          <button type="submit" className="logout-button" onSubmit={onSubmit}>
+        </Grid2>
+        </Grid2>
+
+        <Grid2 item xs={12}>
+          <Button type="submit" variant="contained" fullWidth sx={{
+              
+              border: "1px solid rgb(106, 144, 205)",
+              fontFamily: '"Bebas Neue", sans-serif',
+              borderRadius: "5px",
+              color: "rgb(238, 139, 204)",
+              backgroundColor: "rgb(106, 144, 205)",
+              
+              cursor: "pointer",
+              margin: "10px",
+              
+              "&:hover": {
+                backgroundColor: "#aed5c8", // On hover background change
+              }
+            }}>
             Submit
-          </button>
-        </div>
-    </div>
+          </Button>
+          </Grid2>
+    </Grid2>
   </form>
   );
 };
