@@ -1,9 +1,9 @@
 # README
 Jayden Choi and Lucy Ordway
 
-You may need to run npm install react-icons --save because sometimes there is an error
+You may need to run npm install react-icons --save , as these icons are used, as well as importing Material UI
 
-Our diagrams:
+Our diagrams from feature 3:
 
 Tree:
 
@@ -12,6 +12,14 @@ Tree:
 UML:
 
 <img width="200" alt="Screen Shot 2024-10-18 at 2 27 46 PM" src="https://github.com/user-attachments/assets/7d0072ab-0d8d-482e-b806-4ceabb171ede">
+
+Our Diagrams from feature 4:
+
+<img width="621" alt="Screen Shot 2024-12-13 at 2 33 14 PM" src="https://github.com/user-attachments/assets/27bd4ce2-22ea-43f5-9dff-9151561be0e4" />
+
+Our Diagrams from feature 6:
+
+<img width="588" alt="Screen Shot 2024-12-13 at 2 33 46 PM" src="https://github.com/user-attachments/assets/afed59e3-f35e-4047-9e42-7fc951a3e528" />
 
 
 # Getting Started with Create React App
