@@ -1,6 +1,15 @@
 # Change Log
 
 ### Added
+Import of Material UI
+ 
+### Changed
+ Update of CSS of login and register pages with the use of Material UI
+### Fixed
+ 
+## [0.4.1] - 2024-13-12
+
+### Added
 This is for feature 6. We have added an employee and customer dashboard, as well as a cart and checkout page. The page has also been added to netlify and can be hosted there
  
 ### Changed
